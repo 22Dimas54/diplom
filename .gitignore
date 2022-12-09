@@ -70,3 +70,6 @@ obj/
 .externalNativeBuild
 
 *.cmd
+.mvn
+mvnw
+mvnw.cmd
