@@ -1,6 +1,7 @@
 package ru.netology.diplom.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +28,7 @@ public class User implements UserDetails {
     private String login;
 
     @Column(nullable = false)
-    //@Size(min=6, message = "Не меньше 6 знаков")
+    @Size(min=6, message = "Не меньше 6 знаков")
     private String password;
 
     @Column(nullable = false)
@@ -40,7 +41,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return getRoles();
     }
 
     @Override
